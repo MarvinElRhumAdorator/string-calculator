@@ -8,10 +8,10 @@ import java.util.regex.Pattern;
  * Class extracted after making all test pass, to enforce SRP => Responsibility = extract numbers from the charSequence
  */
 public class NumberExtractor {
-    public static final String CUSTOM_DELIMITER_MARKER = "//";
-    public static final String DEFAULT_DELIMITERS = "[,\n]";
-    public static final char OPENING_BRACKET = '[';
-    public static final char CLOSING_BRACKET = ']';
+    private static final String CUSTOM_DELIMITER_MARKER = "//";
+    private static final String DEFAULT_DELIMITERS = "[,\n]";
+    private static final char OPENING_BRACKET = '[';
+    private static final char CLOSING_BRACKET = ']';
 
     public int[] extractNumbers(String input) {
         String[] numbersStr;

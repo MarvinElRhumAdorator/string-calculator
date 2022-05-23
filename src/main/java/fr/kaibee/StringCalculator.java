@@ -5,8 +5,8 @@ import java.util.List;
 
 public class StringCalculator {
 
-    public static final int MAX_NUMBER = 1000;
-    public static final int EMPTY_RESULT = 0;
+    private static final int MAX_NUMBER = 1000;
+    private static final int EMPTY_RESULT = 0;
     private final NumberExtractor numberExtractor;
 
     public StringCalculator(NumberExtractor numberExtractor) {
