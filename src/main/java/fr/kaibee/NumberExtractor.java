@@ -14,15 +14,18 @@ public class NumberExtractor {
     private static final char CLOSING_BRACKET = ']';
 
     public int[] extractNumbers(String input) {
-        String[] numbersStr;
+        String[] numbers = extractStringNumbers(input);
+        return Arrays.stream(numbers)
+                .mapToInt(Integer::parseInt)
+                .toArray();
+    }
+
+    private String[] extractStringNumbers(String input) {
         if (input.startsWith(CUSTOM_DELIMITER_MARKER)) {
             String delimiters = extractDelimiters(input);
-            numbersStr = getSecondLine(input).split(delimiters);
-        } else {
-            numbersStr = input.split(DEFAULT_DELIMITERS);
+            return getSecondLine(input).split(delimiters);
         }
-
-        return Arrays.stream(numbersStr).mapToInt(Integer::parseInt).toArray();
+        return input.split(DEFAULT_DELIMITERS);
     }
 
     private String extractDelimiters(String input) {
